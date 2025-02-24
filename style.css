@@ -1,0 +1,105 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.quoteButton {
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 25px;
+  background-color: #f65546;
+  color: white;
+  border: none;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s ease;
+}
+
+.quoteButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  /* border-radius:0 30px 30px 0; */
+  z-index: -1;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.quoteButton:hover::before {
+  transform: translateX(0);
+}
+
+.menuButton:active {
+  background-color: #dc3545 !important;
+  outline: none;
+  box-shadow: none;
+}
+
+.imgText {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.imgText::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/car.webp');
+  background-size: cover;
+  background-position: center;
+  filter: blur;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.courseCard::-webkit-scrollbar {
+  display: none;
+}
+
+img.zoomImg {
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+img.zoomImg:hover {
+  transform: scale(1.1);
+}
+
+.courseCard {
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.courseCard::-webkit-scrollbar {
+  display: none;
+}
+
+/* Override vh-100 on small screens */
+@media (max-width: 767.98px) {
+  .vh-100 {
+    height: auto !important;
+  }
+
+  .courseCard {
+    max-height: 50vh;
+  }
+}
+
+.bgRed{
+  background-color: #fc5546;
+}
+
+.blueText{
+  color:#0E2B5C;
+}
